@@ -291,9 +291,9 @@ class Algorithm
 
     void destroy();
 
-    auto DescriptorSetLayout() noexcept {return *this->mDescriptorSetLayout.get();};
-    auto DescriptorPool() noexcept {return *this->mDescriptorPool.get();};
-    auto DescriptorSet() noexcept {return *this->mDescriptorSet.get();};
+    VkDescriptorSetLayout* DescriptorSetLayout() noexcept {return *this->mDescriptorSetLayout.get();};
+    VkDescriptorPool* DescriptorPool() noexcept {return *this->mDescriptorPool.get();};
+    VkDescriptorSet* DescriptorSet() noexcept {return *this->mDescriptorSet.get();};
 
   private:
     // -------------- NEVER OWNED RESOURCES
