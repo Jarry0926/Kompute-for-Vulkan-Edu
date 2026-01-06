@@ -137,8 +137,8 @@ class Algorithm
         }
 
         this->createParameters();
-        //this->createShaderModule();
-        //this->createPipeline();
+        this->createShaderModule();
+        this->createPipeline();
     }
 
     /**
@@ -291,9 +291,13 @@ class Algorithm
 
     void destroy();
 
-    VkDescriptorSetLayout* DescriptorSetLayout() noexcept {return *this->mDescriptorSetLayout.get();};
-    VkDescriptorPool* DescriptorPool() noexcept {return *this->mDescriptorPool.get();};
-    VkDescriptorSet* DescriptorSet() noexcept {return *this->mDescriptorSet.get();};
+    VkDescriptorSetLayout* DescriptorSetLayout() noexcept {return this->mDescriptorSetLayout.get();};
+    VkDescriptorPool* DescriptorPool() noexcept {return this->mDescriptorPool.get();};
+    VkDescriptorSet* DescriptorSet() noexcept {return this->mDescriptorSet.get();};
+    VkShaderModule* ShaderModule() noexcept {return this->mShaderModule.get();};
+    VkPipelineLayout* PipelineLayout() noexcept {return this->mPipelineLayout.get();};
+    VkPipelineCache* PipelineCache() noexcept {return this->mPipelineCache.get();};
+    VkPipeline* Pipeline() noexcept {return this->mPipeline.get();};
 
   private:
     // -------------- NEVER OWNED RESOURCES
