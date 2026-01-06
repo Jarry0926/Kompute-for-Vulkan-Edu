@@ -137,8 +137,8 @@ class Algorithm
         }
 
         this->createParameters();
-        this->createShaderModule();
-        this->createPipeline();
+        //this->createShaderModule();
+        //this->createPipeline();
     }
 
     /**
@@ -290,6 +290,10 @@ class Algorithm
     const std::vector<std::shared_ptr<Memory>>& getMemObjects();
 
     void destroy();
+
+    auto DescriptorSetLayout() noexcept {return *this->mDescriptorSetLayout.get();};
+    auto DescriptorPool() noexcept {return *this->mDescriptorPool.get();};
+    auto DescriptorSet() noexcept {return *this->mDescriptorSet.get();};
 
   private:
     // -------------- NEVER OWNED RESOURCES
